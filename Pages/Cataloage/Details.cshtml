@@ -1,0 +1,43 @@
+﻿@page
+@model Retegan_Andra_proiect2.Pages.Cataloage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Catalog</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Catalog.NumeStud)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Catalog.NumeStud)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Catalog.PrenumeStud)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Catalog.PrenumeStud)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Catalog.NotaStud)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Catalog.NotaStud)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Catalog.DataExam)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Catalog.DataExam)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Catalog.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,46 @@
+﻿@page
+@model Retegan_Andra_proiect2.Pages.Cataloage.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Catalog</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Catalog.NumeStud)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Catalog.NumeStud)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Catalog.PrenumeStud)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Catalog.PrenumeStud)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Catalog.NotaStud)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Catalog.NotaStud)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Catalog.DataExam)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Catalog.DataExam)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Catalog.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

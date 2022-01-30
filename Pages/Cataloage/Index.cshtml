@@ -1,0 +1,76 @@
+﻿@page
+@model Retegan_Andra_proiect2.Pages.Cataloage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Catalog[0].NumeStud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Catalog[0].PrenumeStud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Catalog[0].NotaStud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Catalog[0].DataExam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Catalog[0].Profesor.NumeProfesor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Catalog[0].CatalogMaterii)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CatalogD.Cataloage) {
+    string selectedRow = "";
+         if (item.ID == Model.CatalogID)
+         {
+         selectedRow = "table-success";
+         }
+        <tr class="@selectedRow">
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeStud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrenumeStud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NotaStud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataExam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profesor.NumeProfesor)
+            </td>
+            <td>
+                @{
+                    foreach (var materie in item.CatalogMaterii)
+                    {
+                        @materie.Materie.ID @: @materie.Materie.NumeMaterie <br />
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
