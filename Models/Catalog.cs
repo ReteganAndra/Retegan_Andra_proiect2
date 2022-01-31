@@ -25,6 +25,7 @@ namespace Retegan_Andra_proiect2.Models
         public DateTime DataExam { get; set; }
         public int ProfesorID { get; set; }
         public Profesor Profesor { get; set; }
+        [Display(Name = "Materie")]
         public ICollection<CatalogMaterie> CatalogMaterii { get; set; }
     }
 }
